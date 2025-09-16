@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema PQRS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto p-4">
+        <h1 class="text-3xl font-bold mb-4">Sistema PQRS</h1>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="bg-white p-4 rounded-lg shadow-md">
+                <h2 class="text-xl font-bold mb-4">Enviar PQRS</h2>
+                <form id="pqrs-form" class="mb-4">
+                    <input type="text" id="pqrs-nombre" placeholder="Nombre" required class="w-full p-2 border border-gray-300 rounded mb-2">
+                    <input type="email" id="pqrs-email" placeholder="Correo electrónico" required class="w-full p-2 border border-gray-300 rounded mb-2">
+                    <select id="pqrs-tipo" required class="w-full p-2 border border-gray-300 rounded mb-2">
+                        <option value="">Tipo de PQRS</option>
+                        <option value="Petición">Petición</option>
+                        <option value="Queja">Queja</option>
+                        <option value="Reclamo">Reclamo</option>
+                        <option value="Sugerencia">Sugerencia</option>
+                    </select>
+                    <textarea id="pqrs-mensaje" placeholder="Mensaje" required class="w-full p-2 border border-gray-300 rounded mb-2"></textarea>
+                    <button type="submit" class="w-full bg-blue-500 text-white p-2 rounded">Enviar PQRS</button>
+                </form>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-md">
+                <h2 class="text-xl font-bold mb-4">PQRS Recibidas</h2>
+                <ul id="pqrs-list" class="space-y-2"></ul>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

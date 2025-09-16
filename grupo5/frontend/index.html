@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concesionario de Autos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto p-4">
+        <h1 class="text-3xl font-bold mb-4">Concesionario de Autos</h1>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="bg-white p-4 rounded-lg shadow-md">
+                <h2 class="text-xl font-bold mb-4">Agregar Auto</h2>
+                <form id="auto-form" class="mb-4">
+                    <input type="text" id="auto-marca" placeholder="Marca" required class="w-full p-2 border border-gray-300 rounded mb-2">
+                    <input type="text" id="auto-modelo" placeholder="Modelo" required class="w-full p-2 border border-gray-300 rounded mb-2">
+                    <input type="number" id="auto-anio" placeholder="Año" required class="w-full p-2 border border-gray-300 rounded mb-2">
+                    <input type="number" id="auto-precio" placeholder="Precio" step="0.01" required class="w-full p-2 border border-gray-300 rounded mb-2">
+                    <input type="url" id="auto-imagen" placeholder="URL de imagen (opcional)" class="w-full p-2 border border-gray-300 rounded mb-2">
+                    <button type="submit" class="w-full bg-blue-500 text-white p-2 rounded">Agregar Auto</button>
+                </form>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-md">
+                <h2 class="text-xl font-bold mb-4">Galería de Autos</h2>
+                <ul id="auto-list" class="space-y-2"></ul>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Reviews</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto p-4">
+        <h1 class="text-3xl font-bold mb-4">Cafetería</h1>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="bg-white p-4 rounded-lg shadow-md">
+                <h2 class="text-xl font-bold mb-4">Productos</h2>
+                <form id="product-form" class="mb-4">
+                    <input type="text" id="product-name" placeholder="Nombre del producto" required class="w-full p-2 border border-gray-300 rounded mb-2">
+                    <input type="number" id="product-price" placeholder="Precio" step="0.01" required class="w-full p-2 border border-gray-300 rounded mb-2">
+                    <select id="product-type" required class="w-full p-2 border border-gray-300 rounded mb-2">
+                      <option value="bebida">Bebida</option>
+                      <option value="postre">Postre</option>
+                      <option value="snack">Snack</option>
+                    </select>
+                    <button type="submit" class="w-full bg-blue-500 text-white p-2 rounded">Crear Producto</button>
+                </form>
+                <ul id="product-list" class="space-y-2"></ul>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-md col-span-2">
+                <h2 class="text-xl font-bold mb-4">Carrito</h2>
+                <ul id="cart-list" class="space-y-2 mb-4"></ul>
+                <button id="checkout-btn" class="bg-green-500 text-white p-2 rounded mr-2">Finalizar compra</button>
+                <button id="clear-cart-btn" class="bg-red-500 text-white p-2 rounded">Limpiar carrito</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="edit-modal" class="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full hidden">
+        <div class="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white">
+            <div class="mt-3 text-center">
+                <h3 class="text-lg leading-6 font-medium text-gray-900">Edit Product</h3>
+                <div class="mt-2 px-7 py-3">
+                    <input type="hidden" id="edit-product-id">
+                    <input type="text" id="edit-product-name" placeholder="Name" required class="w-full p-2 border border-gray-300 rounded mb-2">
+                    <input type="number" id="edit-product-price" placeholder="Price" step="0.01" required class="w-full p-2 border border-gray-300 rounded mb-2">
+                </div>
+                <div class="items-center px-4 py-3">
+                    <button id="save-edit" class="px-4 py-2 bg-green-500 text-white text-base font-medium rounded-md w-full shadow-sm hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-300">Save</button>
+                    <button id="cancel-edit" class="px-4 py-2 bg-red-500 text-white text-base font-medium rounded-md w-full shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-300 mt-2">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
